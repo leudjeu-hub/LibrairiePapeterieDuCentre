@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'">
+<title>Librairie Papeterie du Centre — fournitures scolaires livrées</title>
+<meta name="description" content="Cahiers, stylos, cartables et listes scolaires : choisissez, envoyez votre commande sur WhatsApp, nous livrons dans votre quartier.">
+<meta name="theme-color" content="#16205A">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Librairie Papeterie du Centre">
+<meta property="og:title" content="Librairie Papeterie du Centre — fournitures scolaires livrées">
+<meta property="og:description" content="Choisissez vos fournitures, envoyez la commande sur WhatsApp, livraison dans votre quartier.">
+<meta property="og:url" content="">
+<meta property="og:image" content="img/og.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Librairie Papeterie du Centre — fournitures scolaires livrées dans votre quartier">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/config.js" defer></script>
+<script src="js/i18n.js" defer></script>
+<script src="js/products.js" defer></script>
+<script src="js/delivery.js" defer></script>
+<script src="js/script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#catalogue" data-i18n="skip">Aller au catalogue</a>
+<svg class="sprite" aria-hidden="true" focusable="false">
+<symbol id="logo" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#16205A"/><path d="M15 11h26l9 9v33H15z" fill="#F4EEE1"/><path d="M41 11v9h9z" fill="#D9CFB8"/><path d="M21 11v42" stroke="#B8322A" stroke-width="2"/><rect x="26" y="36" width="20" height="6" fill="#FFD93B"/><path d="M29 44V22h7.5a6.5 6.5 0 0 1 0 13H29" fill="none" stroke="#16205A" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-notebook" viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z M9 3v18 M4 7h4 M4 12h4 M4 17h4 M12 8h4"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z M14 7l3 3 M4 20l4-1"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 9h14v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z M9 9V7a3 3 0 0 1 6 0v2 M5 13h14 M11 13v2h2v-2"/></symbol>
+<symbol id="i-ruler" viewBox="0 0 24 24"><path d="M4 20V4l16 16z M8 16v-4.5l4.5 4.5z M4 8h2 M4 12h2"/></symbol>
+<symbol id="i-paper" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z M14 3v5h5 M10 13h6 M10 17h6 M4 6v15h12"/></symbol>
+<symbol id="i-brush" viewBox="0 0 24 24"><path d="M13 5l6 6-6 6-6-6z M7 11l-3 3c-1.4 1.4-.6 4.6 1.4 5.3 1.7.6 3.2 0 4.2-1L12 16"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><path d="M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z M16 16l4.5 4.5"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z M12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15 M13 6l6 6-6 6"/></symbol>
+<symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12 M18 6L6 18"/></symbol>
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8.3 19z M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.6-2-1-1 .9a5 5 0 0 1-2.8-2.8l.9-1-1-2z"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11 M7 10l5 5 5-5 M5 20h14"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><path d="M9 9h10v11H9z M5 15V4h10"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M3 8l2.5-4h13L21 8 M4.5 8h15v11a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1z M3 8h18 M10 12h4"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M5 7h14 M9 7V5h6v2 M8 7l1 13h6l1-13 M10 11v5 M14 11v5"/></symbol>
+</svg>
+<p class="demo-strip" id="demo-strip" hidden><span data-i18n="demo.notice">Version de démonstration : numéro WhatsApp, adresse, horaires et prix sont fictifs.</span></p>
+<header class="site-header" id="top">
+<div class="header-inner">
+<a class="brand" href="#top" aria-label="Librairie Papeterie du Centre — accueil" data-i18n-aria="brand.home">
+<svg class="brand-mark" aria-hidden="true"><use href="#logo"></use></svg>
+<span class="brand-name" aria-hidden="true"><span>Librairie Papeterie</span><em>du Centre</em></span>
+</a>
+<nav class="site-nav" id="site-nav" aria-label="Menu principal" data-i18n-aria="nav.label">
+<ul>
+<li><a href="#familles" data-i18n="nav.familles">Familles</a></li>
+<li><a href="#catalogue" data-i18n="nav.catalogue">Catalogue</a></li>
+<li><a href="#devis" data-i18n="nav.lists">Listes scolaires</a></li>
+<li><a href="#livraison" data-i18n="nav.delivery">Livraison</a></li>
+<li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+</ul>
+</nav>
+<div class="header-tools">
+<button type="button" class="tool lang-btn" id="lang-toggle" lang="en" aria-label="Switch to English" data-i18n-aria="lang.switch">EN</button>
+<button type="button" class="tool cart-btn" id="cart-open" aria-label="Ouvrir le panier" data-i18n-aria="cart.open">
+<svg class="ico" aria-hidden="true"><use href="#i-bag"></use></svg>
+<span class="cart-count" id="cart-count" aria-hidden="true">0</span>
+</button>
+<button type="button" class="tool burger" id="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu" data-i18n-aria="nav.open">
+<span class="burger-glyph" aria-hidden="true">☰</span>
+</button>
+</div>
+</div>
+</header>
+<div class="nav-backdrop" id="nav-backdrop" hidden></div>
+<main id="main">
+<section class="hero" id="hero" aria-labelledby="hero-title">
+<div class="hero-inner">
+<p class="eyebrow" data-i18n="hero.eyebrow">Fournitures scolaires &amp; bureau · livraison par quartier</p>
+<h1 class="hero-title" id="hero-title">
+<span class="line"><span class="line-in" data-i18n="hero.l1">Cahiers, stylos,</span></span>
+<span class="line"><span class="line-in" data-i18n="hero.l2">cartables…</span></span>
+<span class="line"><span class="line-in"><mark class="marker" data-i18n="hero.l3">livrés chez vous.</mark></span></span>
+</h1>
+<p class="hero-lead" data-i18n="hero.lead">Choisissez vos articles, envoyez la commande sur WhatsApp : nous confirmons et livrons dans votre quartier.</p>
+<div class="hero-cta">
+<a class="btn btn-ink" href="#catalogue"><span data-i18n="hero.cta">Commander maintenant</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></a>
+<a class="btn btn-line" href="#devis" data-i18n="hero.cta2">Envoyer ma liste scolaire</a>
+</div>
+<ol class="hero-steps">
+<li><span class="step-n" aria-hidden="true">1</span><span data-i18n="hero.s1">Choisir</span></li>
+<li><span class="step-n" aria-hidden="true">2</span><span data-i18n="hero.s2">Remplir</span></li>
+<li><span class="step-n" aria-hidden="true">3</span><span data-i18n="hero.s3">Envoyer sur WhatsApp</span></li>
+</ol>
+</div>
+<div class="hero-scene" aria-hidden="true">
+<div class="stack" id="stack">
+<div class="book b3"></div>
+<div class="book b2"></div>
+<div class="book b1"><span class="book-tag">CAHIER<i>96 p.</i></span></div>
+<div class="pencil"></div>
+</div>
+</div>
+</section>
+<div class="marquee" aria-hidden="true">
+<div class="marquee-track">
+<span data-i18n="marquee">Cahiers — Stylos — Cartables — Équerres — Listes scolaires — Livraison par quartier — Commande sur WhatsApp — </span>
+<span data-i18n="marquee">Cahiers — Stylos — Cartables — Équerres — Listes scolaires — Livraison par quartier — Commande sur WhatsApp — </span>
+</div>
+</div>
+<section class="section familles" id="familles" aria-labelledby="fam-title">
+<div class="section-head" data-reveal>
+<p class="kicker"><span aria-hidden="true">01 — </span><span data-i18n="fam.kicker">Familles</span></p>
+<h2 id="fam-title" data-i18n="fam.title">Nos familles d'articles</h2>
+<p class="section-lead" data-i18n="fam.lead">Onze familles pour tout trouver vite. Touchez une photo pour voir la famille.</p>
+</div>
+<ul class="fam-tiles" id="fam-tiles"></ul>
+</section>
+<section class="section catalogue" id="catalogue" aria-labelledby="cat-title" tabindex="-1">
+<div class="section-head" data-reveal>
+<p class="kicker"><span aria-hidden="true">01 — </span><span data-i18n="cat.kicker">Catalogue</span></p>
+<h2 id="cat-title" data-i18n="cat.title">Trouvez vos fournitures</h2>
+<p class="section-lead" data-i18n="cat.lead">Prix en FCFA. Sans prix affiché : sur devis, confirmé sur WhatsApp.</p>
+</div>
+<div class="toolbar" id="toolbar">
+<div class="search">
+<label class="search-label" for="search" data-i18n="cat.searchLabel">Rechercher un article</label>
+<div class="search-box">
+<svg class="ico" aria-hidden="true"><use href="#i-search"></use></svg>
+<input id="search" type="search" placeholder="Cahier, stylo, équerre…" data-i18n-placeholder="cat.searchPh" autocomplete="off" enterkeyhint="search">
+</div>
+</div>
+<div class="chips" id="chips" role="group" aria-label="Catégories" data-i18n-aria="cat.filters"></div>
+</div>
+<p class="result-line"><span class="result-count" id="result-count" role="status"></span><button type="button" class="fam-tag" id="fam-clear" hidden aria-label="Retirer le filtre de famille" data-i18n-aria="fam.clear"><span data-i18n="fam.tag">Famille</span>&nbsp;: <strong id="fam-label"></strong><svg class="ico" aria-hidden="true"><use href="#i-close"></use></svg></button></p>
+<ul class="grid" id="grid"></ul>
+<div class="empty" id="empty" hidden>
+<p data-i18n="cat.empty">Aucun article ne correspond. Demandez-le nous : nous l'avons peut-être en boutique.</p>
+<a class="btn btn-line" href="#devis" data-i18n="cat.emptyCta">Demander un devis</a>
+</div>
+</section>
+<section class="section devis" id="devis" aria-labelledby="devis-title">
+<div class="devis-grid">
+<div class="section-head" data-reveal>
+<p class="kicker"><span aria-hidden="true">02 — </span><span data-i18n="quote.kicker">Listes scolaires</span></p>
+<h2 id="devis-title" data-i18n="quote.title">Votre liste scolaire, préparée pour vous</h2>
+<p class="section-lead" data-i18n="quote.lead">Envoyez la liste de l'école : nous préparons le devis et répondons sur WhatsApp.</p>
+<ol class="quote-steps">
+<li data-i18n="quote.step1">Remplissez vos coordonnées et la classe.</li>
+<li data-i18n="quote.step2">Collez la liste, ou envoyez sa photo dans la conversation.</li>
+<li data-i18n="quote.step3">Recevez le devis, puis la livraison.</li>
+</ol>
+</div>
+<form class="card-form" id="quote-form" novalidate data-reveal>
+<div class="field">
+<label for="q-name" data-i18n="form.name">Nom complet</label>
+<input id="q-name" name="name" autocomplete="name" required aria-describedby="q-name-err">
+<p class="err" id="q-name-err" hidden></p>
+</div>
+<div class="field">
+<label for="q-phone" data-i18n="form.phone">Téléphone</label>
+<input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="q-phone-err">
+<p class="err" id="q-phone-err" hidden></p>
+</div>
+<div class="field-row">
+<div class="field">
+<label for="q-school" data-i18n="quote.school">École (facultatif)</label>
+<input id="q-school" name="school" autocomplete="off">
+</div>
+<div class="field">
+<label for="q-class" data-i18n="quote.class">Classe</label>
+<input id="q-class" name="class" autocomplete="off" placeholder="CM2, 6e…" data-i18n-placeholder="quote.classPh">
+</div>
+</div>
+<div class="field">
+<label for="q-list" data-i18n="quote.list">Liste ou remarques</label>
+<textarea id="q-list" name="list" rows="4" placeholder="Collez la liste ici, ou écrivez « photo » et envoyez-la sur WhatsApp." data-i18n-placeholder="quote.listPh"></textarea>
+</div>
+<a class="btn btn-wa" id="quote-send" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="quote.send">Demander le devis par WhatsApp</span></a>
+</form>
+</div>
+</section>
+<section class="section delivery" id="livraison" aria-labelledby="del-title">
+<div class="section-head" data-reveal>
+<p class="kicker"><span aria-hidden="true">03 — </span><span data-i18n="del.kicker">Livraison</span></p>
+<h2 id="del-title" data-i18n="del.title">Frais de livraison par zone</h2>
+</div>
+<div class="rules" data-reveal>
+<p class="rule"><span class="rule-label" data-i18n="del.min">Commande minimum</span><strong class="rule-value" id="rule-min"></strong></p>
+<p class="rule rule-free" id="rule-free-line"><span class="rule-label" data-i18n="del.free">Livraison offerte dès</span><strong class="rule-value" id="rule-free"></strong></p>
+</div>
+<div class="table-wrap" data-reveal>
+<table class="fees">
+<caption class="sr-only" data-i18n="del.caption">Frais de livraison par zone et quartier</caption>
+<thead><tr><th scope="col" data-i18n="del.zone">Zone</th><th scope="col" data-i18n="del.areas">Quartiers</th><th scope="col" class="num" data-i18n="del.fee">Frais</th></tr></thead>
+<tbody id="fees-body"></tbody>
+</table>
+</div>
+<p class="note" data-i18n="del.other">Quartier absent de la liste ? Choisissez « Autre » : les frais vous sont confirmés sur WhatsApp.</p>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<p class="footer-big" aria-hidden="true"><span>Papeterie</span> <em>du Centre</em></p>
+<div class="footer-grid">
+<div>
+<h2 class="footer-h" data-i18n="foot.visit">Nous rendre visite</h2>
+<address>Carrefour Abbia, face Manège — Yaoundé, Cameroun</address>
+</div>
+<div>
+<h2 class="footer-h" data-i18n="foot.call">Appeler</h2>
+<p><a class="footer-link" id="shop-phone" href="tel:+00000000000">+000 00 00 00 00</a></p>
+<p><a class="footer-link" id="shop-wa" href="#" target="_blank" rel="noopener" data-i18n="foot.wa">Écrire sur WhatsApp</a></p>
+</div>
+<div>
+<h2 class="footer-h" data-i18n="foot.hours">Horaires</h2>
+<p data-i18n="foot.hoursText">Lun – ven : 8 h – 18 h · Sam : 9 h – 15 h · Dim : fermé</p>
+<p><a class="footer-link" id="shop-maps" href="https://www.google.com/maps/search/?api=1&amp;query=Librairie+Papeterie+du+Centre" target="_blank" rel="noopener" data-i18n="foot.map">Nous trouver (Google Maps)</a></p>
+</div>
+</div>
+<p class="footer-bottom">© <span id="year"></span> Librairie Papeterie du Centre</p>
+</footer>
+<a class="fab-map" id="fab-map" href="https://www.google.com/maps/search/?api=1&amp;query=Librairie+Papeterie+du+Centre" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-pin"></use></svg><span data-i18n="fab.map">Nous trouver</span></a>
+<aside class="install-strip" id="install-strip" hidden>
+<svg class="ico install-ico" aria-hidden="true"><use href="#i-down"></use></svg>
+<div class="install-txt">
+<p class="install-title" data-i18n="install.title">Installer l'application</p>
+<p class="install-desc" id="install-desc" data-i18n="install.desc">Ajoutez la boutique à votre écran d'accueil : ouverture instantanée.</p>
+</div>
+<button type="button" class="btn btn-ink" id="install-btn" hidden data-i18n="install.cta">Installer</button>
+<button type="button" class="tool" id="install-close" aria-label="Fermer" data-i18n-aria="close"><svg class="ico" aria-hidden="true"><use href="#i-close"></use></svg></button>
+</aside>
+<div class="cartbar" id="cartbar" hidden>
+<button type="button" class="cartbar-btn" id="cartbar-btn">
+<span class="cartbar-info"><span id="cartbar-count"></span><strong id="cartbar-total"></strong></span>
+<span class="cartbar-cta"><span data-i18n="cartbar.cta">Commander</span><svg class="ico" aria-hidden="true"><use href="#i-arrow"></use></svg></span>
+</button>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog class="sheet" id="cart-dialog" aria-labelledby="cart-title">
+<div class="sheet-inner">
+<div class="sheet-head">
+<h2 id="cart-title" data-i18n="cart.title">Votre commande</h2>
+<button type="button" class="tool close-btn" id="cart-close" aria-label="Fermer" data-i18n-aria="close"><svg class="ico" aria-hidden="true"><use href="#i-close"></use></svg></button>
+</div>
+<div class="sheet-body">
+<ul class="cart-list" id="cart-list" aria-label="Articles du panier" data-i18n-aria="cart.listLabel"></ul>
+<div class="cart-clear-row"><button type="button" class="clear-cart-txt" id="cart-clear" data-i18n="cart.clear">Vider le panier</button></div>
+<p class="cart-empty" id="cart-empty" data-i18n="cart.empty">Votre panier est vide. Ajoutez des articles depuis le catalogue.</p>
+<div class="empty-actions">
+<a class="btn btn-ink" id="cart-browse" href="#catalogue" data-i18n="cart.browse">Parcourir le catalogue</a>
+</div>
+<div class="custom-add" id="custom-add">
+<p class="custom-title" data-i18n="custom.title">Fourniture absente de la liste ?</p>
+<label class="sr-only" for="o-custom" data-i18n="custom.label">Fourniture hors catalogue</label>
+<div class="custom-row">
+<input id="o-custom" name="custom" autocomplete="off" placeholder="Ex. : craies, encre imprimante, cahier 300 pages…" data-i18n-placeholder="custom.ph" aria-describedby="o-custom-err">
+<button type="button" class="btn-add" id="custom-add-btn"><span aria-hidden="true">+</span> <span data-i18n="custom.add">Ajouter</span></button>
+</div>
+<p class="err" id="o-custom-err" hidden></p>
+</div>
+<form class="order-form" id="order-form" novalidate>
+<h3 class="form-title" data-i18n="order.title">Vos coordonnées</h3>
+<div class="field">
+<label for="o-name" data-i18n="form.name">Nom complet</label>
+<input id="o-name" name="name" autocomplete="name" required aria-describedby="o-name-err">
+<p class="err" id="o-name-err" hidden></p>
+</div>
+<div class="field">
+<label for="o-phone" data-i18n="form.phone">Téléphone</label>
+<input id="o-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required aria-describedby="o-phone-err">
+<p class="err" id="o-phone-err" hidden></p>
+</div>
+<div class="field">
+<label for="o-area" data-i18n="order.area">Quartier</label>
+<select id="o-area" name="area" required aria-describedby="o-area-fee o-area-err"></select>
+<p class="hint" id="o-area-fee" aria-live="polite"></p>
+<p class="err" id="o-area-err" hidden></p>
+</div>
+<div class="field" id="o-other-wrap" hidden>
+<label for="o-other" data-i18n="order.other">Précisez votre quartier</label>
+<input id="o-other" name="other" autocomplete="address-level3" aria-describedby="o-other-err">
+<p class="err" id="o-other-err" hidden></p>
+</div>
+<div class="field">
+<label for="o-landmark" data-i18n="order.landmark">Repère (facultatif)</label>
+<input id="o-landmark" name="landmark" placeholder="Près de la pharmacie, portail bleu…" data-i18n-placeholder="order.landmarkPh">
+</div>
+<div class="field">
+<label for="o-slot" data-i18n="order.slot">Créneau de livraison</label>
+<select id="o-slot" name="slot"></select>
+</div>
+<fieldset class="field pay">
+<legend data-i18n="order.payment">Paiement</legend>
+<div class="pay-list" id="o-pay"></div>
+</fieldset>
+</form>
+<p class="sum-note" id="range-note" hidden></p>
+<dl class="summary" id="summary">
+<div><dt data-i18n="sum.subtotal">Sous-total</dt><dd id="sum-sub"></dd></div>
+<div><dt data-i18n="sum.delivery">Livraison</dt><dd id="sum-del"></dd></div>
+<div class="sum-total"><dt data-i18n="sum.total">Total à payer</dt><dd id="sum-total"></dd></div>
+</dl>
+<p class="sum-note" id="sum-quote" hidden></p>
+<div class="send-alt">
+<button type="button" class="btn btn-line" id="dl-btn"><svg class="ico" aria-hidden="true"><use href="#i-down"></use></svg><span data-i18n="order.download">Télécharger</span></button>
+<button type="button" class="btn btn-line" id="copy-btn"><svg class="ico" aria-hidden="true"><use href="#i-copy"></use></svg><span data-i18n="order.copy">Copier</span></button>
+</div>
+<div class="after-send" id="after-send" hidden>
+<p id="after-send-text" tabindex="-1" data-i18n="after.text">Commande envoyée sur WhatsApp ? Vous pouvez vider le panier.</p>
+<div class="after-actions">
+<button type="button" class="btn btn-ink" id="clear-yes" data-i18n="after.clear">Vider le panier</button>
+<button type="button" class="btn btn-line" id="clear-no" data-i18n="after.keep">Garder le panier</button>
+</div>
+</div>
+</div>
+<div class="sheet-foot">
+<p class="min-alert" id="min-alert" role="alert" hidden></p>
+<p class="foot-total"><span data-i18n="sum.total">Total à payer</span><strong id="foot-total"></strong></p>
+<a class="btn btn-wa btn-block" id="wa-send" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"></use></svg><span data-i18n="order.send">Envoyer par WhatsApp</span></a>
+</div>
+</div>
+</dialog>
+</body>
+</html>
