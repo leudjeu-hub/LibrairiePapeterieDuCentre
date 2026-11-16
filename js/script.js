@@ -115,10 +115,15 @@ if (!v) return { state: 'none' };
 if (v === OTHER) return { state: 'confirm' };
 const zone = zoneOf(v);
 if (!zone) return { state: 'none' };
-if (C.freeFrom && sub >= C.freeFrom) return { state: 'free', zone, fee: 0 };
+const free = zone.freeFrom === undefined ? C.freeFrom : zone.freeFrom;
+if (free && sub >= free) return { state: 'free', zone, fee: 0 };
 return { state: 'fee', zone, fee: zone.fee };
 }
-const blocked = (tt) => tt.items === 0 || (tt.quote === 0 && tt.sub < C.minOrder);
+function minFor() {
+const z = zoneOf($('#o-area').value);
+return Math.max(C.minOrder || 0, (z && z.min) || 0);
+}
+const blocked = (tt) => tt.items === 0 || (tt.quote === 0 && tt.sub < minFor());
 let activeCat = 'all';
 let firstRender = true;
 let expanded = false;
@@ -228,7 +233,7 @@ $('#cartbar-total').textContent = money(tt.sub);
 dialog.classList.toggle('is-empty', tt.items === 0);
 const areaFee = $('#o-area-fee');
 if (d.state === 'fee') areaFee.textContent = t('area.fee', { zone: t('zone', { n: d.zone.id }), fee: money(d.fee) });
-else if (d.state === 'free') areaFee.textContent = t('area.free', { zone: t('zone', { n: d.zone.id }), free: money(C.freeFrom) });
+else if (d.state === 'free') areaFee.textContent = t('area.free', { zone: t('zone', { n: d.zone.id }), free: money(d.zone.freeFrom || C.freeFrom) });
 else if (d.state === 'confirm') areaFee.textContent = t('area.other');
 else areaFee.textContent = '';
 const fees = ZONES.map((z) => z.fee);
@@ -245,9 +250,10 @@ $('#foot-total').textContent = money(tt.sub + (d.fee || 0));
 $('#sum-quote').hidden = tt.quote === 0;
 $('#sum-quote').textContent = t('sum.quote', { n: tt.quote });
 const minAlert = $('#min-alert');
-const short = tt.items > 0 && tt.quote === 0 && tt.sub < C.minOrder;
+const minNow = minFor();
+const short = tt.items > 0 && tt.quote === 0 && tt.sub < minNow;
 minAlert.hidden = !short;
-minAlert.textContent = short ? t('min.missing', { min: money(C.minOrder), left: money(C.minOrder - tt.sub) }) : '';
+minAlert.textContent = short ? t('min.missing', { min: money(minNow), left: money(minNow - tt.sub) }) : '';
 const send = $('#wa-send');
 const off = blocked(tt);
 send.classList.toggle('is-disabled', off);
@@ -463,9 +469,11 @@ toast(t(ok ? 'toast.copied' : 'toast.copyFail'));
 }
 function renderDeliverySection() {
 $('#rule-min').textContent = money(C.minOrder);
-$('#rule-free-line').hidden = !C.freeFrom;
-if (C.freeFrom) $('#rule-free').textContent = money(C.freeFrom);
-setHtml($('#fees-body'), html`${ZONES.map((z) => html`<tr><th scope="row">${t('zone', { n: z.id })}</th><td>${z.quartiers.join(' · ')}</td><td class="num">${money(z.fee)}</td></tr>`)}`);
+const freeZones = ZONES.filter((z) => z.freeFrom);
+const freeAmount = C.freeFrom || (freeZones[0] && freeZones[0].freeFrom);
+$('#rule-free-line').hidden = !freeAmount;
+if (freeAmount) $('#rule-free').textContent = money(freeAmount) + (C.freeFrom ? '' : ' (' + t('zones', { list: freeZones.map((z) => z.id).join(', ') }) + ')');
+setHtml($('#fees-body'), html`${ZONES.map((z) => html`<tr><th scope="row">${t('zone', { n: z.id })}${z.name ? html` — ${label(z.name)}` : ''}${z.delay ? html`<br><small>${label(z.delay)}</small>` : ''}</th><td>${z.quartiers.join(' · ')}</td><td class="num">${money(z.fee)}${z.min && z.min > (C.minOrder || 0) ? html`<br><small>${t('del.minZone', { min: money(z.min) })}</small>` : ''}</td></tr>`)}`);
 }
 function renderAll() {
 renderFamilles();
